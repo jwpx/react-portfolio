@@ -1,15 +1,18 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import {BsFillMoonStarsFill} from 'react-icons/bs';
-import {
-  AiFillTwitterCircle, 
+import {BsMoonFill} from 'react-icons/bs';
+import {BsSun} from 'react-icons/bs';
+import { 
   AiFillLinkedin, 
-  AiFillYoutube,} from 'react-icons/ai';
+  AiFillGithub,} from 'react-icons/ai';
 import Image from 'next/image';
-import deved from 'public/dev-ed-wave.png';
-import design from 'public/design.png';
-import code from 'public/code.png';
-import consulting from 'public/consulting.png';
+import avatar from 'public/avatar.jpg';
+import htmllogo from 'public/html.png';
+import csslogo from 'public/css.png';
+import jslogo from 'public/js.png';
+import reactlogo from 'public/react.png';
+import tailwindlogo from 'public/tailwind.png';
+import wordpresslogo from 'public/wordpress.png';
 import web1 from 'public/web1.png';
 import web2 from 'public/web2.png';
 import web3 from 'public/web3.png';
@@ -31,85 +34,76 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=' bg-white px-10 md:px-20 lg:px:40 dark:bg-gray-900'>
+      <main className=' bg-white px-10 md:px-20 lg:px:40 dark:bg-neutral-900'>
         <section className=' min-h-screen'>
           <nav className='py-10 mb-12 flex justify-between'>
-            <h1 className=' text-xl font-burtons dark:text-white'>developed by Jethendri Perera</h1>
+            <h1 className=' text-xl font-mono dark:text-white'>JETHENDRI.PERERA</h1>
             <ul className=' flex items-center'>
-              <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className=' cursor-pointer text-2xl dark:text-white'/></li>
-              <li><a className=' bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8' href='https://www.linkedin.com/in/jethendri/'>LinkedIn</a></li>
+              <BsSun className=' text-2xl text-white px-1'/>
+              <label htmlFor="check" className=' bg-gray-100 relative w-16 h-8 rounded-full'>
+                <input type="checkbox" id="check" onClick={() => setDarkMode(!darkMode)} className=' sr-only peer'/>
+                <span className=' w-2/5 h-4/5 bg-rose-300 absolute rounded-full left-1 top-1 peer-checked:bg-rose-600 peer-checked:left-9 transition-all duration-500 '></span> 
+              </label> 
+              <BsMoonFill className=' text-2xl text-neutral-900 px-1 text-right'/>
+              <li><a className=' bg-gradient-to-r from-red-600 to-rose-800 text-white px-4 py-2 rounded-md ml-8' href='https://www.linkedin.com/in/jethendri/'>LinkedIn</a></li>
             </ul>
           </nav>
+
           
-          <div className=' text-center p-10'>
-            <h2 className=' text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Jethendri Perera, Hello</h2>
-            <h3 className=' text-2xl py-2 md:text-3xl dark:text-white'> Developer and designer.</h3>
-            <p className=' text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white'>I'm a highly motivated and responsible graduate through Victoria University. 
-              I am passionate individual with great collaborative and adaptability skills.
-            </p>
-          </div>
-          <div className=' text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-white'>
-            <AiFillTwitterCircle />
-            <AiFillLinkedin />
-            <AiFillYoutube />
-          </div>
-          <div className=' relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96'>
-            <Image src={deved} fill style={{objectFit:"cover"}}></Image>
-          </div>
+            <div className='flex flex-wrap gap-9 text-center lg:py-10 lg:max-w-6xl md:justify-center sm:justify-center m-auto'>
+              <div className='lg:text-left lg:px-20'>
+                <h2 className=' text-5xl py-5 text-rose-700 font-medium md:text-6xl'>Jethendri Perera</h2>
+                <h3 className=' text-2xl font-mono py-2 md:text-3xl dark:text-white'> SOFTWARE DEVELOPER AND DESIGNER.</h3>
+                <p className=' text-lg py-5 leading-8 text-gray-800 md:text-xl max-w-xl  dark:text-white'>Hi!, I am passionate individual with great collaborative and adaptability skills.
+                </p>
+                <div className=' text-4xl flex lg:justify-start justify-center gap-16 py-3 text-gray-600 dark:text-white'>
+                  <a href="https://www.linkedin.com/in/jethendri/" target="_blank"><AiFillLinkedin /></a>
+                  <a href="https://github.com/jwpx" target="_blank"><AiFillGithub /></a>
+                </div>
+              </div>
+              <div className=' rounded-full w-80 h-80 overflow-hidden mx-auto'>
+              <Image src={avatar}></Image>
+              </div>
+            </div>
+            <div className=' flex flex-wrap gap-10 lg:max-w-6xl lg:px-20 m-auto lg:py-4 py-12 justify-center lg:justify-start'>
+              <div><h3 className=' text-xl text-rose-700 font-medium'>TECH STACK | </h3></div>
+              <div className=' lg:w-8 lg:h-8 w-10 h-10'><Image src={htmllogo}></Image></div>
+              <div className=' lg:w-8 lg:h-8 w-10 h-10'><Image src={csslogo}></Image></div>
+              <div className=' lg:w-8 lg:h-8 w-10 h-10'><Image src={jslogo}></Image></div>
+              <div className=' lg:w-8 lg:h-8 w-10 h-10'><Image src={tailwindlogo}></Image></div>
+              <div className=' lg:w-8 lg:h-8 w-10 h-10'><Image src={reactlogo}></Image></div>
+              <div className=' lg:w-8 lg:h-8 w-10 h-10'><Image src={wordpresslogo}></Image></div>
+            </div>
         </section>
 
         <section>
-          <div>
-            <h3 className=' text-3xl py-1 dark:text-white'>Services I offer</h3>
-            <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>
-              Since the beginning of my journey, I've done remote <span className=' text-teal-500'>work</span> for
+          <div className='md:flex gap-10 lg:max-w-6xl m-auto py-20'>
+          <div><h3 className=' text-2xl py-1 text-rose-700 font-medium'>BACKGROUND</h3></div>
+          <div className=' text-lg text-justify leading-8 text-gray-800 dark:text-white'>
+            <p className='py-2 '>
+              I recently graduated from <span className=' text-rose-700 font-medium'>Victoria University - Australia</span> after completing Bachelor
+              of Information Technology (Web and Mobile Application Development).
+            </p>
+            <p className='py-2'>
+              As a web developer, I enjoy bridging the gap between engineering and design - 
+              Combining my technical knowledge with my keen eye for design to create a beautiful product.
+              My goal is to always build applications that are scalable and efficient while providing engaging, 
+              pixel-perfect user experiences.
+            </p>
+            <p className=' py-2'>
+            <span className=' text-rose-700 font-medium'>When I'm not in front of a computer screen, </span> 
+              I'm probably drawing, reading books or playing video games.
             </p>
           </div>
-
-          <div className='lg:flex gap-10 dark:text-white'>
-            <div className=' text-center shadow-lg p-10 roundd-xl my-10'>
-              <center><Image src={design} width={100} height={100}></Image></center>
-              <h3 className=' text-lg font-medium pt-8 pb-2'> Beautiful Designs</h3>
-              <p className='py-2'>
-                Creating elegant designs suited for your needs following core design theory
-              </p>
-              <h4 className=' py-4 text-teal-600'>Design tools that I used</h4>
-              <p className=' text-gray-800 py-1  dark:text-white'>Photoshop</p>
-              <p className=' text-gray-800 py-1  dark:text-white'>Illustrator</p>
-              <p className=' text-gray-800 py-1  dark:text-white'>Figma</p>
-            </div>
-
-            <div className=' text-center shadow-lg p-10 roundd-xl my-10'>
-              <center><Image src={code} width={100} height={100}></Image></center>
-              <h3 className=' text-lg font-medium pt-8 pb-2'> Beautiful Designs</h3>
-              <p className='py-2'>
-                Creating elegant designs suited for your needs following core design theory
-              </p>
-              <h4 className=' py-4 text-teal-600'>Design tools that I used</h4>
-              <p className=' text-gray-800 py-1  dark:text-white'>Photoshop</p>
-              <p className=' text-gray-800 py-1  dark:text-white'>Illustrator</p>
-              <p className=' text-gray-800 py-1  dark:text-white'>Figma</p>
-            </div>
-
-            <div className=' text-center shadow-lg p-10 roundd-xl my-10'>
-              <center><Image src={consulting} width={100} height={100}></Image></center>
-              <h3 className=' text-lg font-medium pt-8 pb-2'> Beautiful Designs</h3>
-              <p className='py-2'>
-                Creating elegant designs suited for your needs following core design theory
-              </p>
-              <h4 className=' py-4 text-teal-600'>Design tools that I used</h4>
-              <p className=' text-gray-800 py-1  dark:text-white'>Photoshop</p>
-              <p className=' text-gray-800 py-1  dark:text-white'>Illustrator</p>
-              <p className=' text-gray-800 py-1  dark:text-white'>Figma</p>
-            </div>
           </div>
         </section>
 
+        
         <section>
-          <div>
-            <h3 className=' text-3xl py-1  dark:text-white'>Portfolio</h3>
-            <p className='text-md py-2 leading-8 text-gray-800  dark:text-white'>
-              Since the beginning of my journey, I've done remote <span className=' text-teal-500'>work</span> for
+          <div className=' md:flex gap-x-16 lg:max-w-6xl m-auto py-20 lg:py-36'>
+            <div><h3 className=' text-2xl py-1 text-rose-700 font-medium'>PORTFOLIO <span className=' text-white dark:text-neutral-900'>.  </span></h3></div>
+            <p className=' text-lg text-justify leading-8 text-gray-800 dark:text-white py-2'>
+              Each project is a <span className=' text-rose-700 font-medium'>unique</span> web development
             </p>
           </div>
           <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
